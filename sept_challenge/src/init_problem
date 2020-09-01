@@ -1,0 +1,35 @@
+#!/bin/bash
+
+SOL_DIR=./solution
+LIB_FILE=lib.rs
+MOD_FILE=mod.rs
+TEMPLATE_FILE=template.rs
+
+if [ $# -ne 1 ]; then
+    echo -e "Usage: \n  ./init_problem PROBLEM_TITLE"
+    exit 1
+fi
+
+if [[ ${1:(-3)} == ".rs" ]]; then
+    echo "warning: no file extension needed"
+fi
+
+# extract smallest suffix matching pattern
+# ex: problem.rs -> problem
+PROBLEM_TITLE="${1%.*}"
+echo -e "Creating problem: \n  $PROBLEM_TITLE"
+
+if [ ! -d "$SOL_DIR" ]; then
+    echo "No dir $SOL_DIR found"
+    exit 1
+fi
+
+if [ ! -f "$SOL_DIR/$MOD_FILE" ]; then
+    echo "No file $MOD_FILE found, creating now"
+fi
+
+echo "mod $PROBLEM_TITLE;" >> $SOL_DIR/$MOD_FILE
+
+FILENAME="${PROBLEM_TITLE}.rs"
+echo "Creating file ${FILENAME}"
+cp "$TEMPLATE_FILE" "$SOL_DIR/$FILENAME"
