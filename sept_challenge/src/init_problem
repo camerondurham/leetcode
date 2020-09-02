@@ -5,6 +5,7 @@ LIB_FILE=lib.rs
 MOD_FILE=mod.rs
 TEMPLATE_FILE=template.rs
 
+
 if [ $# -ne 1 ]; then
     echo -e "Usage: \n  ./init_problem PROBLEM_TITLE"
     exit 1
@@ -32,4 +33,4 @@ echo "mod $PROBLEM_TITLE;" >> $SOL_DIR/$MOD_FILE
 
 FILENAME="${PROBLEM_TITLE}.rs"
 echo "Creating file ${FILENAME}"
-cp "$TEMPLATE_FILE" "$SOL_DIR/$FILENAME"
+cp -i "$TEMPLATE_FILE" "$SOL_DIR/$FILENAME"
