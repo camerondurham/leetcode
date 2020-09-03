@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SOL_DIR=./solution
+SOLN_PATH=src/solution
 LIB_FILE=lib.rs
 MOD_FILE=mod.rs
-TEMPLATE_FILE=template.rs
+TEMPLATE_PATH=src/template.rs
 
 
 if [ $# -ne 1 ]; then
@@ -20,17 +20,17 @@ fi
 PROBLEM_TITLE="${1%.*}"
 echo -e "Creating problem: \n  $PROBLEM_TITLE"
 
-if [ ! -d "$SOL_DIR" ]; then
-    echo "No dir $SOL_DIR found"
+if [ ! -d "$SOLN_PATH" ]; then
+    echo "No dir $SOLN_PATH found"
     exit 1
 fi
 
-if [ ! -f "$SOL_DIR/$MOD_FILE" ]; then
+if [ ! -f "$SOLN_PATH/$MOD_FILE" ]; then
     echo "No file $MOD_FILE found, creating now"
 fi
 
-echo "mod $PROBLEM_TITLE;" >> $SOL_DIR/$MOD_FILE
+echo "mod $PROBLEM_TITLE;" >> $SOLN_PATH/$MOD_FILE
 
 FILENAME="${PROBLEM_TITLE}.rs"
 echo "Creating file ${FILENAME}"
-cp -i "$TEMPLATE_FILE" "$SOL_DIR/$FILENAME"
+cp -i "$TEMPLATE_PATH" "$SOLN_PATH/$FILENAME"
