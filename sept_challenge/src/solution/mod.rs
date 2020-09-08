@@ -4,3 +4,4 @@ mod repeated_substring_pattern;
 mod partition_labels;
 mod get_all_elements;
 mod largest_overlap;
+mod word_pattern;
