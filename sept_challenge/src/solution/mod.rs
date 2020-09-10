@@ -5,3 +5,5 @@ mod partition_labels;
 mod get_all_elements;
 mod largest_overlap;
 mod word_pattern;
+mod sum_root_to_leaf;
+mod compare_version_numbers;
