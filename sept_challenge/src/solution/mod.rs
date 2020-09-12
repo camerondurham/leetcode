@@ -8,3 +8,4 @@ mod word_pattern;
 mod sum_root_to_leaf;
 mod compare_version_numbers;
 mod bulls_and_cows;
+mod max_product;
