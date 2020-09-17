@@ -13,3 +13,4 @@ mod repeated_substring_pattern;
 mod sum_root_to_leaf;
 mod word_pattern;
 mod length_of_last_word;
+mod find_maximum_xor;
