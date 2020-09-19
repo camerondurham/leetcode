@@ -10,15 +10,10 @@ impl Solution {
 
         let mut ans = Vec::<i32>::new();
         for num in nums {
-            if num < low {
-                continue;
+            if num >= low && num <= high {
+                ans.push(num);
             }
-            if num > high {
-                break;
-            }
-            ans.push(num);
         }
-        ans.sort();
         ans
     }
 }
