@@ -17,3 +17,5 @@ mod find_maximum_xor;
 mod is_robot_bounded;
 mod buy_and_sell_stock;
 mod sequential_digits;
+mod unique_paths_ii;
+mod unique_paths_iii;
