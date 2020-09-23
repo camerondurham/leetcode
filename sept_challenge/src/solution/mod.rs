@@ -1,5 +1,6 @@
 mod bulls_and_cows;
 mod buy_and_sell_stock;
+mod car_pooling;
 mod combination_sum;
 mod compare_version_numbers;
 mod contains_duplicate_iii;
@@ -19,4 +20,5 @@ mod sum_root_to_leaf;
 mod unique_paths_ii;
 mod unique_paths_iii;
 mod word_pattern;
-mod car_pooling;
+mod majority_element;
+mod majority_element_ii;
