@@ -31,7 +31,7 @@ fi
 
 grep "$PROBLEM_TITLE" $SOLN_PATH/$MOD_FILE
 
-if [ ! $? ]; then
+if [ "$?" -ne "0" ]; then
     echo "mod $PROBLEM_TITLE;" >> $SOLN_PATH/$MOD_FILE
 else
     echo "$PROBLEM_TITLE already listed in $MOD_FILE... skipping."
