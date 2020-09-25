@@ -22,3 +22,5 @@ mod unique_paths_iii;
 mod word_pattern;
 mod majority_element;
 mod majority_element_ii;
+mod gas_station;
+mod find_the_difference;
