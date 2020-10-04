@@ -1,0 +1,32 @@
+#!/bin/bash
+
+TEMPLATE_PATH=./template.rs
+
+
+if [ $# -ne 1 ]; then
+    echo -e "Usage: \n  ./init_problem PROBLEM_TITLE"
+    exit 1
+fi
+
+if [[ ${1:(-3)} == ".rs" ]]; then
+    echo "warning: no file extension needed"
+fi
+
+# extract smallest suffix matching pattern
+# ex: problem.rs -> problem
+PROBLEM_TITLE="${1%.*}"
+echo -e "Creating problem: \n  $PROBLEM_TITLE"
+
+grep "$PROBLEM_TITLE" .
+
+if [ "$?" -ne "0" ]; then
+    echo "mod $PROBLEM_TITLE;" >> $SOLN_PATH/$MOD_FILE
+else
+    echo "$PROBLEM_TITLE already listed in $MOD_FILE... skipping."
+fi
+
+FILENAME="${PROBLEM_TITLE}.rs"
+echo "Creating file ${FILENAME}"
+cp -i "$TEMPLATE_PATH" "$FILENAME"
+nvim $FILENAME
+
