@@ -10,6 +10,7 @@ Currently trying to learn these languages better:
 
 - 🦀 Rust
 - 💎 Ruby
+- 🐻 Go
 
 
 ## Content
