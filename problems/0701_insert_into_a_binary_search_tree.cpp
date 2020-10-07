@@ -22,23 +22,36 @@
 
 class Solution {
 public:
-    TreeNode* insertIntoBST(TreeNode* root, int val) {
+    TreeNode* insertIntoBSTVerbose(TreeNode* root, int val) {
         if (root != nullptr){
             if (val > root->val) {
                 if (root->right != nullptr){
-                    insertIntoBST(root->right, val);
+                    insertIntoBSTVerbose(root->right, val);
                 } else {
                     root->right = new TreeNode(val, nullptr, nullptr);
                 }
             } else {
                 if (root->left != nullptr){
-                    insertIntoBST(root->left, val);
+                    insertIntoBSTVerbose(root->left, val);
                 } else {
                     root->left = new TreeNode(val, nullptr, nullptr);
                 }
             }
         } else {
             return new TreeNode(val, nullptr, nullptr);
+        }
+        return root;
+    }
+    TreeNode* insertIntoBST(TreeNode* root, int val) {
+        if(root == nullptr) {
+            TreeNode* node = new TreeNode(val);
+            return node;
+        }
+
+        if(val > root->val){
+            root->right = insertIntoBST(root->right, val);
+        } else {
+            root->left = insertIntoBST(root->left, val);
         }
         return root;
     }
