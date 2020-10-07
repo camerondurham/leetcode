@@ -10,17 +10,17 @@ func combinationSum(candidates []int, target int) [][]int {
     return ans;
 }
 
-func backtrack(nums []int, current []int,target int) {
+func backtrack(nums *[]int, current *[]int,target int) {
     if target == 0 {
-        ans = append(ans, current)
+        ans = append(ans, *current)
         return
     }
-    for i, val := range nums {
+    for i, val := range *nums {
         if val <= target {
-            tmp := make([]int, 0, len(current))
-            tmp = append(tmp, current...)
+            tmp := make([]int, 0, len(*current))
+            tmp = append(tmp, *current...)
             tmp = append(tmp, val)
-            backtrack(nums[i:], tmp, target - val)
+            backtrack((*nums)[i:], &tmp, target - val)
         } else {
             break
         }
