@@ -1,5 +1,5 @@
 [package]
-name = "oct_challenge"
+name = "rust_soln"
 version = "0.1.0"
 authors = ["Cameron Durham <camerondurham@users.noreply.github.com>"]
 edition = "2018"
