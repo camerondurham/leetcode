@@ -7,7 +7,7 @@ This is where I practice languages.
 Currently trying to learn these languages better:
 
 - 🦀 Rust
-- 🐻 Go
+- 🐭 Go
 
 
 ## Content
