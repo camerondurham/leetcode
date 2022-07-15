@@ -8,6 +8,8 @@ include_directories(2022/valid_palindrome)
 add_executable(leetcode
         2022/valid_palindrome/Solution.cpp
         2022/valid_palindrome/Solution.h
+        2022/k_closest_points/Solution.cpp
+        2022/k_closest_points/Solution.h
         problems/0014_longest_common_prefix.cpp
         problems/0017_letter_combinations_of_phone_number.cpp
         problems/0043_multiply_strings.cpp
