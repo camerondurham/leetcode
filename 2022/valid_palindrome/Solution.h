@@ -2,7 +2,7 @@
 // Created by cam on 7/10/22.
 //
 
-#ifndef LEETCODE_SOLUTION_H
+#ifndef LEETCODE_SOLUTION2_H
 #define LEETCODE_SOLUTION_H
 #include <cctype>
 #include <string>
@@ -45,4 +45,4 @@ public:
     }
 };
 
-#endif //LEETCODE_SOLUTION_H
+#endif //LEETCODE_SOLUTION2_H
