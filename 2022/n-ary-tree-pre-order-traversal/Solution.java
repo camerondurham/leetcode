@@ -30,4 +30,21 @@ class Solution {
         }
         return list;
     }
+    public List<Integer> preorderIterative(Node root) {
+      List<Integer> list = new ArrayList<>();
+      if (root == null) {
+        return list;
+      }
+      Stack<Node> sk = new Stack<Node>();
+      sk.push(root);
+      while(!sk.empty()) {
+        Node n = sk.pop();
+        list.add(n.val);
+        for (int i = 0; i < n.children.size(); ++i) {
+          sk.push(n.children.get(n.children.size() - i - 1));
+        }
+      }
+      return list;
+    }
+}
 }
