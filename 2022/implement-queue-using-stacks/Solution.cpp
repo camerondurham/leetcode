@@ -1,43 +1,32 @@
-class MyQueue {
+#include<vector>
+using std::vector;
+class Solution {
+  public:
+    Solution() { }
+    void push(int x) {
+      A.push_back(x);
+    }
+    int pop() {
+      queueify();
+      int last = B.back();
+      B.pop_back();
+      return last;
+    }
+    int peek() {
+      queueify();
+      return B.back();
+    }
 
-    private Stack<Integer> stackA = new Stack<Integer>();
-    private Stack<Integer> stackB = new Stack<Integer>();
-    public MyQueue() {
-    }
-    
-    public void push(int x) {
-        stackA.push(x);
-    }
-    
-    public int pop() {
-        this.move();
-        return stackB.pop();
-    }
-    
-    public int peek() {
-        this.move();
-        return stackB.peek();
-    }
-    
-    public boolean empty() {
-        return stackA.empty() && stackB.empty();
-    }
-    
-    private void move() {
-        if (stackB.empty()) {
-             while (!stackA.empty()) {
-                int last = stackA.pop();
-                stackB.push(last);
-            }
+  private:
+    vector<int> A;
+    vector<int> B;
+
+    void queueify() {
+      if (B.empty()) {
+        while(!A.empty()) {
+          B.emplace_back(A.back());
+          A.pop_back();
         }
+      }
     }
-}
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * MyQueue obj = new MyQueue();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.peek();
- * boolean param_4 = obj.empty();
- */
+};
