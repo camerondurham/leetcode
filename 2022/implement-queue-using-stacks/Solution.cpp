@@ -1,8 +1,15 @@
 #include<vector>
 using std::vector;
-class Solution {
-  public:
-    Solution() { }
+
+/**
+Runtime: 3 ms, faster than 47.47% of C++ online submissions for Implement Queue using Stacks.
+Memory Usage: 6.9 MB, less than 89.70% of C++ online submissions for Implement Queue using Stacks.
+*/
+class MyQueue {
+public:
+    MyQueue() {
+        
+    }
     void push(int x) {
       A.push_back(x);
     }
@@ -15,6 +22,9 @@ class Solution {
     int peek() {
       queueify();
       return B.back();
+    }
+    bool empty() {
+        return A.empty() && B.empty();
     }
 
   private:
@@ -29,4 +39,14 @@ class Solution {
         }
       }
     }
+
 };
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
+ */
