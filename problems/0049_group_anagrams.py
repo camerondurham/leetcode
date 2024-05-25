@@ -33,3 +33,15 @@ class OriginalSolution:
         for v_list in answers.values():
             final_list.append(v_list)
         return final_list
+
+# optimal solution
+class OptimalSolution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = defaultdict(list) # mapping charCount to a list of Anagrams
+        for s in strs:
+            count = [0] * 26 # lowercase english letters
+            for c in s:
+                count[ord(c) - ord('a')] += 1
+            res[tuple(count)].append(s)
+        return res.values()
+        # Complexity O(m * n)
