@@ -1,29 +1,32 @@
-class NonWorkingSolution {
-    // n=3
-    // Output: ["((()))","(()())","(())()","()(())","()()()"]
-    // n=2, 4 chars, 2 pairs
-    // Output: ["(())", "()()"]
-    // ()()
+class Solution {
     public List<String> generateParenthesis(int n) {
-        // set to generate the final answer from to eliminate duplicates
-
-        Stack<String> parens = new Stack<>();
-        int parenCount = 1;
-        // base case
-        parens.push("()");
-        while (parenCount < n) {
-            List<String> temp = new ArrayList<>();
-            while (!parens.isEmpty()) {
-                String top = parens.pop();
-                temp.add(String.format("(%s)", top));
-                temp.add(String.format("%s()", top));
-                temp.add(String.format("()%s", top));
-            }
-            parens.addAll(temp);
-            parenCount++;
+        // what is a valid answer ? equal num start end parens +  each pair is closed
+        List<String> answer = new ArrayList();
+        helper(0, 0, n, "", answer);
+        return answer;
+    }
+    private void helper(int open, int close, int n, String s, List<String> res) {
+        if (open + close > n * 2 || open > n) {
+            return;
         }
-        Set<String> set = new HashSet<>();
-        set.addAll(parens);
-        return List.copyOf(set);
+        if (open == close && s.length() == n*2) {
+            res.add(s);
+            return;
+        }
+        if (open < n) {
+            helper(open + 1, close, n, s + "(", res);
+        }
+        if (close < open) {
+            helper(open, close + 1, n, s + ")", res);
+        }
     }
 }
+
+/*
+
+(  -> ()
+) -> noop
+
+() -> ()(), (()), ())), ((()
+
+*/
